@@ -1,0 +1,12 @@
+{
+  "type" : "record",
+  "name" : "Test",
+  "namespace" : "com.example.kafka.avro.types",
+  "fields" : [ {
+    "name" : "id",
+    "type" : "long"
+  }, {
+     "name" : "test",
+     "type" : "string"
+  }]
+}

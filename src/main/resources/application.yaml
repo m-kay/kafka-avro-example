@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    stream:
+      default:
+        consumer:
+          useNativeEncoding: true
+      bindings:
+        test-input:
+          destination: test
+          content-type: application/*+avro
+        test-output:
+          destination: test
+          content-type: application/*+avro
+      kafka:
+        binder:
+          brokers: kafka:9092
+          consumer-properties:
+            value.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+            schema.registry.url: http://localhost:8081
+            basic.auth.credentials.source: USER_INFO
+            basic.auth.user.info: admin:test
+            specific.avro.reader: true
